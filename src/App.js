@@ -7,9 +7,9 @@ import SquareFunction from './Square/squareFunction';
 function App() {
   return (
     <div className="App">
-      <SquareClass />
-      <Square />
-      {/* <SquareFunction /> */}
+      {/* <SquareClass />
+      <Square /> */}
+      <SquareFunction />
      
     </div>
   );

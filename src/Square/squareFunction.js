@@ -16,8 +16,11 @@ function SquareFunction(){
 
     const colors = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
     const [color, setColor] = useState(colors);
+    const [count, setCount] = useState(0)
+   
     
     const click = (e)=>{
+        setCount(count + 1)
         let target = e.target;
         target.classList.add("animated");
         target.style.backgroundColor = colors;
@@ -30,7 +33,9 @@ function SquareFunction(){
         
     }
     return (
-    <div className='App' onClick = {click} style={styles} onMouseDown={remove}></div>
+    <div className='App' onClick = {click} style={styles} onMouseDown={remove}>
+         <p className="count"> {count} </p>
+    </div>
     );
 }
 
