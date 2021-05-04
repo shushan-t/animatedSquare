@@ -5,7 +5,8 @@ class SquareClass extends Component {
 
     state = { 
         count: 0,
-        bool: false
+        bool: false,
+        imgUrl: "https://picsum.photos/200"
      };
    
     random=(number)=> {

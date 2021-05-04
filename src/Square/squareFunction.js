@@ -17,26 +17,37 @@ function SquareFunction(){
     const colors = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
     const [color, setColor] = useState(colors);
     const [count, setCount] = useState(0)
-   
+    const [imgUrl, setImg] = useState("https://picsum.photos/200")
     
     const click = (e)=>{
-        setCount(count + 1)
+        setCount(count + 1);
         let target = e.target;
         target.classList.add("animated");
         target.style.backgroundColor = colors;
         setColor(color);
+        setImg("")
+       
     }
 
     const remove = (e)=>{
         let target = e.target;
         target.classList.remove("animated");
+        setImg(imgUrl);
+       
+        
         
     }
     return (
-    <div className='App' onClick = {click} style={styles} onMouseDown={remove}>
-         <p className="count"> {count} </p>
-    </div>
+      
+            <div className='App' onClick = {click} style={styles} onAnimationEnd={remove}>
+                <p className="count">{count}{imgUrl}</p>
+                
+            </div>
+      
+            
+        
     );
 }
 
 export default SquareFunction;
+
